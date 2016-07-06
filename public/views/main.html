@@ -1,0 +1,32 @@
+<div class="row-fluid" ng-controller="UsersCtrl">
+
+	<!-- Sidebar -->
+	<div ng-include="sidebar"></div>
+
+	<div class="span9">
+		<!-- Flash message -->
+
+		<div class="hero-unit">
+			<h1>Hey {{logged}}, welcome!</h1>
+			<hr>
+			<p>Please choose a character to enter the game with or create a new one.</p>
+			<div>
+				<hr>
+				<ul class="nav nav-list">
+					<li class="nav-header">Your characters:</li>
+					<li data-ng-repeat="character in characters | filter : {'user' : logged } | orderBy: 'charactername'" data-ng-animate="'custom'">
+						<a href="#characters/{{character.charactername}}">{{character.charactername}}</a>
+					</li>
+				</ul>
+			</div>
+			<hr>
+			<p><a href="#characters/new" class="btn btn-primary btn-large">Add new character &raquo;</a></p>
+		</div>
+	</div><!--/span-->
+</div><!--/row-->
+
+<hr>
+
+<footer>
+	<p>&copy; Roger Dering 2016</p>
+</footer>

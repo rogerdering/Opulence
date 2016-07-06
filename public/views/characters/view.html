@@ -1,0 +1,77 @@
+<div ng-include="breadcrumburl"></div>
+
+<div class="row-fluid">
+	<div class="span12">
+		<h2>{{selected_character.charactername}}</h2>
+		<strong>Another cloud-covered day starts in Opulence City. Mayor Colt looks out over the rioters camping out in front of cityhall, even as his staff ensure official approval ratings stay well in the postive as he enters the second years of his fifth term. The OCPD stages another crackdown on petty crime.  Gentek secures new patents in the field of cloning, organic AIs, cybernetic body-enhancements and VR mindjacks. The little guy scrounges together a living in menial jobs as labour unions pat themselves on the back for raising the minimum wage to 2 credits for an 11 hour work day.</strong>
+		<br/>
+		<p id="thejob" hidden>{{selected_character.job}}</p>
+		<p id="thegender" hidden>{{selected_character.gender}}</p>
+		<p id="theskill" hidden>{{selected_character.skill}}</p>
+		<p id="yourprogress" hidden>{{selected_character.progress}}</p>
+		<p id="arrest" hidden>{{selected_character.inCustody}}</p>
+		<hr/>
+		<button type="button" id="start" class="btn btn-primary">Start</button>
+		<div id="story">
+			<div id="anarchist" ng-include="anarchisturl"></div>
+			<div id="cop" ng-include="joburl"></div>
+			<div id="gangster" ng-include="gangsterurl"></div>
+			<div id="mechanic" ng-include="mechanicurl"></div>
+			<div id="officeworker" ng-include="officeworkerurl"></div>
+			<div id="scientist" ng-include="scientisturl"></div>
+		</div>
+		<script>
+			$(document).ready(function(){
+				$("#story").hide()
+				$("#span9").hide()
+				setTimeout(function(){
+					var job = $("#thejob").text();
+					$("#anarchist").hide()
+					$("#cop").hide()
+					$("#gangster").hide()
+					$("#mechanic").hide()
+					$("#officeworker").hide()
+					$("#scientist").hide()
+					var gender = $("#thegender").text();
+					var skill = $("#theskill").text();
+					$("#theman").hide()
+					$("#thewoman").hide()
+					$("#start").click(function(){
+						$("#story").show()
+						$("#start").hide()
+						if(job == "anarchist") {
+							$("#anarchist").show()
+						}
+						else if(job == "cop") {
+							$("#cop").show()
+						}
+						else if(job == "gangster") {
+							$("#gangster").show()
+						}
+						else if(job == "mechanic") {
+							$("#mechanic").show()
+						}
+						else if(job == "officeworker") {
+							$("#officeworker").show()
+						}
+						else {
+							$("#scientist").show()
+						}
+						if(gender == "man") {
+							$("#theman").show()
+						}
+						else {
+							$("#thewoman").show()
+						}
+						if(skill == "streetracing") {
+							$(".streetracing").show()
+						}
+						else {
+							$(".streetracing").hide()
+						}
+					})
+				}, 500)
+			})
+		</script>
+	</div>
+</div>

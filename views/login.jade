@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	h1.main My Game
+	form.form-signin(action='/login', method='post')
+			h2.form-signin-heading Please sign in
+			input.input-block-level(type='text', placeholder='Username', name='username', autofocus='autofocus')
+			input.input-block-level(type='password', placeholder='Password', name='password')
+			button.btn.btn-large.btn-primary(type='submit') Sign in
+	form.form-signin(action='/register', method='post')
+			h2.form-signin-heading Or sign up
+			input.input-block-level(type='text', placeholder='Username', name='username', autofocus='autofocus')
+			input.input-block-level(type='email', placeholder='Email', name='email')
+			input.input-block-level(type='password', placeholder='Password', name='password')
+			button.btn.btn-large.btn-primary(type='submit') Sign up

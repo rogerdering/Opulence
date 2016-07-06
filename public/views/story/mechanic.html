@@ -1,0 +1,61 @@
+<div class="row-fluid">
+	<div class="span12">
+		<div id="mechanic0">
+			<p>{{selected_character.charactername}} is coming to the end of another long day at the motorpool, <span id="theman">he</span><span id="thewoman">she</span> is just fixing up a very sweet flying car for a some rich kid when the police comes looking for you.</p>
+			<button type="button" id="option1">Steal the car and make a run for it</button>
+			<button type="button" id="option2">Surrender without question</button>
+		</div>
+
+		<div class="mechanic" id="mechanic1">
+			<p>You mow past the stuff while reffing up the engine. The copper you can see running towards his own vehicle while calling for baxk up on the ground below. His back-up won't be here in time. This chase will be decided by you and him.</p>
+			<p>You turn on your car radio. The traffic channel was reporting on jams and incidents all over the city. As of now you are a {{selected_character.gender}} with a mission.</p>
+			<button type="button" id="option3">Go left</button>
+			<button type="button" id="option4">Go right</button>
+			<button type="button" class="streetracing" id="raceskill1">Make him crash</button>
+			<button type="button" class="streetracing" id="raceskill2">Disappear into the alleyways</button>
+		</div>
+
+		<div class="mechanic" id="mechanic2">
+			<p>The cop approaches you while his partner nonchalantly starts inspecting the workbench behind you. They've locked you in. No choice now but to cooperate.</p>
+			<p>The cop starts talking to you about your whereabouts last night.</p>
+			<button type="button" id="option5">Tell the truth</button>
+			<button type="button" id="option6">Make something up</button>
+		</div>
+		<script>
+			$(document).ready(function(){
+				$(".mechanic").hide()
+				$("#option1").click(function(){
+					$("#option1").hide()
+					$("#option2").hide()
+					$("#mechanic1").show()
+				})
+				$("#option2").click(function(){
+					$("#option1").hide()
+					$("#option2").hide()
+					$("#mechanic2").show()
+				})
+				$("#option3").click(function(){
+					$("#option3").hide()
+					$("#option4").hide()
+					$("#mechanic3").show()
+				})
+				$("#option4").click(function(){
+					$("#option3").hide()
+					$("#option4").hide()
+					$("#mechanic4").show()
+				})
+				$("#option5").click(function(){
+					$("#option5").hide()
+					$("#option6").hide()
+					$("#mechanic5").show()
+				})
+				$("#option5").click(function(){
+					$("#option5").hide()
+					$("#option6").hide()
+					$("#mechanic6").show()
+				})
+			})
+		</script>
+	</div>
+</div>
+
