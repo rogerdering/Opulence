@@ -11,11 +11,13 @@ html
 	script(src='/javascripts/services/user_service.js')
 	script(src='/javascripts/directives/confirm_box.js')
 	script(src='/javascripts/controllers/users_controller.js')
+	link(rel='stylesheet', href='/stylesheets/reset.css')
 	link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+	link(rel='stylesheet', href='/stylesheets/terminal.css')
 	style body{padding-top:100px;}
 	
 	link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
-	link(rel='stylesheet', href='/stylesheets/style.css')
+	link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
 	body(data-ng-app="angularApp", data-ng-controller="AppCtrl")
 
 	- if (user)

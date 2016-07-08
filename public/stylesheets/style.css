@@ -1,25 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=VT323);
+
+@font-face {
+  font-family: Boombox;
+  src: url("fonts/Boombox.otf") format("opentype"); }
+
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: black;
+  color: #FAFFBD;
+  font-family: 'Boombox';
+  font-size: 18px;
+  -webkit-font-smoothing: none;
+  line-height: 1.2;
 }
 
 
-h1.main{
+h1 {
   text-align: center;
   padding-bottom: 30px;
-  font-size: 56px;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: #FAFFBD;
 }
+
 a {
-  color: #00B7FF;
-  cursor: pointer;
+  color: #FAFFBD;
+  font-size: 20px;
 }
 
 .alert-block h4{
   color: white;
-}
-
-body {
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
 }
 
 .form-signin {
@@ -29,14 +39,15 @@ body {
   background-color: #fff;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  color: black;
 }
 .form-signin h2{
-	color: #BBBBBB;
+	color: black;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -51,7 +62,7 @@ body {
 }
 
 .form-characters input.ng-invalid.ng-dirty {
-  background-color: #FA787E;
+  background-color: #78FA89;
 }
 .form-characters input.ng-valid.ng-dirty {
   background-color: #78FA89;
@@ -92,4 +103,25 @@ body {
 }
 .custom-move-setup.custom-move-start {
   opacity:1;
+}
+
+.button {
+  background-color: transparent;
+  border-color: transparent;
+  font-family: 'Boombox';
+  font-size: 18px;
+  padding-bottom: 6px;
+  color: #33b5e5;
+}
+
+input {
+  background-color: black;
+  color: white;
+  font-family: 'Boombox';
+}
+
+.footer {
+  color: gray;
+  font-size: 10px;
+  padding: 10px;
 }

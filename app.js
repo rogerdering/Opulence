@@ -31,6 +31,7 @@ var characterSchema = mongoose.Schema({
 	skill: { type: String, required: true },
 	progress: { type: Number, required: true },
 	inCustody: { type: Boolean, required: true },
+	wanted: { type: Boolean, required: true },
 	user: { type: String, required: true }
 });
 
@@ -78,6 +79,7 @@ var character = new Character({
 	skill: 'streetracing',
 	progress: 1,
 	inCustody: true,
+	wanted: true,
 	user: 'admin'
 })
 character.save();
@@ -204,6 +206,7 @@ app.post( '/api/characters/add' , function(req,res) {
 		skill: req.body.character.skill,
 		progress: 0,
 		inCustody: false,
+		wanted: false,
 		user: req.user.username
 	});
 	character.save(function(err) {
@@ -216,21 +219,12 @@ app.post( '/api/characters/add' , function(req,res) {
 	});
 });
 
-/* PUT /api/users/:id */
-app.put('/api/character/:id', function(req, res){
-	return Character.findById(req.params.id, function(err,character){
-		character.progress = req.body;
-		user.inCustody = req.body;
-		return character.save(function(err){
-			if(!err){
-				console.log("Progress is saved");
-			} else {
-				console.log(err);
-			}
-			return res.send(character);
-		})
+app.post('/api/characters', function(req, res){
+	Character.findOne({charactername: req.params.charactername}, function(err,character){
+		return res.send(character);
 	})
 });
+
 /************************************/
 /*************** END REST ***********/
 /************************************/

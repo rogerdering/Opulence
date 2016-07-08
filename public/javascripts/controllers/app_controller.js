@@ -7,8 +7,10 @@ app.controller('AppCtrl', ['$scope','$location', '$http','parse',
 		$scope.copurl = 'views/story/cop.html';
 		$scope.gangsterurl = 'views/story/gangster.html';
 		$scope.mechanicurl = 'views/story/mechanic.html';
-		$scope.officeworker = 'views/story/officeworker.html';
+		$scope.officeworkerurl = 'views/story/officeworker.html';
 		$scope.scientisturl = 'views/story/scientist.html';
+		$scope.faketerminalurl = 'views/story/fake-terminal.html';
+		$scope.terminallinkurl = 'views/story/terminallink.html';
 
 		$scope.setFlash = function(title,message,type){
 			var base = 'alert alert-block alert-';

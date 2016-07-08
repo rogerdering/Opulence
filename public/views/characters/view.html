@@ -2,7 +2,7 @@
 
 <div class="row-fluid">
 	<div class="span12">
-		<h2>{{selected_character.charactername}}</h2>
+		<h1 class="thename">{{selected_character.charactername}}</h1>
 		<strong>Another cloud-covered day starts in Opulence City. Mayor Colt looks out over the rioters camping out in front of cityhall, even as his staff ensure official approval ratings stay well in the postive as he enters the second years of his fifth term. The OCPD stages another crackdown on petty crime.  Gentek secures new patents in the field of cloning, organic AIs, cybernetic body-enhancements and VR mindjacks. The little guy scrounges together a living in menial jobs as labour unions pat themselves on the back for raising the minimum wage to 2 credits for an 11 hour work day.</strong>
 		<br/>
 		<p id="thejob" hidden>{{selected_character.job}}</p>
@@ -11,7 +11,7 @@
 		<p id="yourprogress" hidden>{{selected_character.progress}}</p>
 		<p id="arrest" hidden>{{selected_character.inCustody}}</p>
 		<hr/>
-		<button type="button" id="start" class="btn btn-primary">Start</button>
+		<button type="button" id="start" class="button">Start</button>
 		<div id="story">
 			<div id="anarchist" ng-include="anarchisturl"></div>
 			<div id="cop" ng-include="joburl"></div>
@@ -26,6 +26,7 @@
 				$("#span9").hide()
 				setTimeout(function(){
 					var job = $("#thejob").text();
+					var name = $("#thename").text();
 					$("#anarchist").hide()
 					$("#cop").hide()
 					$("#gangster").hide()
@@ -70,8 +71,15 @@
 							$(".streetracing").hide()
 						}
 					})
+
 				}, 500)
+
 			})
+
 		</script>
 	</div>
 </div>
+
+<footer>
+	<p class="footer">&copy; Roger Dering 2016</p>
+</footer>

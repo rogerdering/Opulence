@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terminal.js Demo</title>
+  <style>
+    .terminal {
+      background: black;
+      color:      white;
+
+      width:  100%;
+      height: 100%;
+
+      padding: 0;
+      margin:  0;
+
+      box-sizing: border-box;
+      border-style: double;
+      border-color: white;
+    }
+  </style>
+  <script src="http://avgp.github.io/webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="fake-terminal.html">
+</head>
+<body>
+  <div class="terminal">
+    <h1></h1>
+    <fake-terminal>{{selected_character.charactername}}@terminal.js &sim; &gt;</fake-terminal>
+  </div>
+  <script>
+    var cmds = {};
+
+    cmds.status = function() {
+      var output = "<div>" +
+      "<ul>" +
+      "<li>struct group_info init_groups = { .usage = ATOMIC_INIT(2) }</li>" +
+      "<li>struct group_info *groups_alloc(int gidsetsize){</li>" +
+      "<li>    struct group_info *group_info;</li>" +
+      "<li>    int nblocks;</li>" +
+      "<li>    int i;</li>" +
+      "<li>nblocks = (gidsetsize + NGROUPS_PER_BLOCK - 1) / NGROUPS_PER_BLOCK;</li>" +
+      "<li><strong>/* Make sure we always allocate at least one indirect block pointer */</strong></li>"
+      "</ul></div>";
+      return output;
+    };
+
+    cmds.hello = function(args) {
+      if(args.length < 2) return "<p>Hello. Why don't you tell me your name?</p>";
+      return "Hello " + args[1];
+    };
+
+    var terminal = document.querySelector("fake-terminal");
+    if(terminal.ready) terminal.commands = cmds
+      else {
+        document.querySelector("fake-terminal").onload = function() {
+          this.commands = cmds;
+        }
+      }
+      
+  </script>
+</body>
+</html>
